@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        function calculateFunction(x) {
+            if (x < 2) {
+                return Math.cos(4 * x) + 5;
+            } else if (x === 2) {
+                return Math.abs(Math.tan(x));
+            } else if (x > 2) {
+                return 2 + Math.cbrt(x);
+            }
+        }
+
+        let step = 2;
+        let outputDiv = document.getElementById("output");
+        for (let x = -6; x <= 6; x += step) {
+            let result = calculateFunction(x);
+            let paragraph = document.createElement("p");
+            paragraph.textContent = `При x = ${x}, f(x) = ${result}`;
+            outputDiv.appendChild(paragraph);
+        }
+    </script>
+</body>
+</html>
